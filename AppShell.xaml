@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HelloWorldCB.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HelloWorldCB"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="#512BD4"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Title="HelloWorldCB">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="MAUI Functions"
+             Icon="maui.png">
+            <ShellContent Title="Web viewer"
+                          Icon="webview.png"
+                          ContentTemplate="{DataTemplate local:Views.WebviewPage}" />
+            <ShellContent Title="Database viewer"
+                          Icon="database.png"
+                          ContentTemplate="{DataTemplate local:Views.DatabasePage}" />
+        </Tab>
+        <ShellContent Title="Photo app"
+                      Icon="photo.png"
+                      ContentTemplate="{DataTemplate local:Views.PhotoPage}" />
+        <ShellContent Title="QR scanner"
+                      Icon="qr.png"
+                      ContentTemplate="{DataTemplate local:Views.QrPage}" />
+        <ShellContent Title="Maps app"
+                      Icon="maps.png"
+                      ContentTemplate="{DataTemplate local:Views.MapsPage}" />
+    </FlyoutItem>
+    <ShellContent Title="About"
+                  Icon="about.png"
+                  ContentTemplate="{DataTemplate local:Views.AboutPage}" />
+</Shell>
